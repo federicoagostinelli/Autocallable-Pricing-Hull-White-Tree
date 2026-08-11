@@ -1,0 +1,43 @@
+% runAssignment06_Group01
+% Group 01, AY2025-2026
+
+clc; clear; close all
+format long
+
+%% ================================================================
+%  Project setup
+% ================================================================
+
+projectRoot = fileparts(which('runAssignment06_Group01.m'));
+addpath(genpath(projectRoot));
+
+%% ================================================================
+%  Initialize markets, products and settings
+% ================================================================
+
+[baseMarket, productContract, product, settings] = initializeMarketsAndProducts();
+
+%% ================================================================
+%  Run exercises
+% ================================================================
+
+results1a = runExercise1a( ...
+    baseMarket, ...
+    product, ...
+    settings);
+
+results1b = runExercise1b( ...
+    baseMarket, ...
+    product, ...
+    results1a, ...
+    settings);
+
+results1d = runExercise1d( ...
+    baseMarket, ...
+    productContract, ...
+    results1a, ...
+    settings);
+
+results2 = runExercise2( ...
+    baseMarket, ...
+    settings);
